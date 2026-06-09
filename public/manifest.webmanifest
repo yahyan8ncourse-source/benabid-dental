@@ -1,0 +1,17 @@
+{
+  "name": "Cabinet Dentaire Dr Benabid",
+  "short_name": "Dr Benabid",
+  "description": "Cabinet Dentaire Dr Benabid Wahiba — soins dentaires d'excellence à Alger Centre.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c81e2d",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
