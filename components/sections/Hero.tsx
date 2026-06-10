@@ -13,26 +13,27 @@ export default function Hero() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-50/70 via-white to-white pt-28 sm:pt-32 lg:pt-40">
-      {/* decorative blobs */}
-      <div className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-brand-200/50 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-brand-100/60 blur-3xl" />
+    <section className="relative isolate overflow-hidden bg-white pt-28 sm:pt-32 lg:bg-gradient-to-b lg:from-brand-50/70 lg:via-white lg:to-white lg:pt-40">
+      {/* Decorative blobs — desktop only so they don't wash out mobile text */}
+      <div className="pointer-events-none absolute -left-24 top-24 hidden h-72 w-72 rounded-full bg-brand-200/40 blur-3xl lg:block" />
+      <div className="pointer-events-none absolute right-0 top-0 hidden h-96 w-96 rounded-full bg-brand-100/50 blur-3xl lg:block" />
 
-      <div className="container-px mx-auto grid max-w-7xl items-center gap-12 pb-16 lg:grid-cols-2 lg:gap-8 lg:pb-24">
+      <div className="container-px relative z-10 mx-auto grid max-w-7xl items-center gap-12 pb-16 lg:grid-cols-2 lg:gap-8 lg:pb-24">
         <motion.div
+          className="rounded-3xl bg-white p-6 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.04] sm:p-8 sm:shadow-none sm:ring-0 lg:bg-transparent lg:p-0"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="eyebrow">
-            <Stethoscope className="h-4 w-4" /> {site.dentist} · {site.role}
+          <span className="eyebrow text-brand-700">
+            <Stethoscope className="h-4 w-4 shrink-0" /> {site.dentist} · {site.role}
           </span>
-          <h1 className="heading mt-4 text-4xl sm:text-5xl lg:text-6xl">
+          <h1 className="heading mt-4 text-4xl text-ink sm:text-5xl lg:text-6xl">
             Votre sourire,
             <br />
-            <span className="gradient-text">notre passion.</span>
+            <span className="text-brand-700 sm:gradient-text">notre passion.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink sm:text-lg lg:text-ink-soft">
             Au cœur d&apos;Alger, le Cabinet Dentaire Dr Benabid vous offre des
             soins dentaires modernes et personnalisés : esthétique, facettes,
             prothèses zircone, implants et bien plus — dans un cadre doux et
@@ -53,7 +54,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
+          <div className="mt-9 flex flex-col gap-3 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-4">
             <div className="flex items-center gap-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -66,15 +67,15 @@ export default function Hero() {
               href={site.map.placeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-ink-soft hover:text-brand-600"
+              className="flex items-center gap-2 text-ink hover:text-brand-600 sm:text-ink-soft"
             >
-              <MapPin className="h-4 w-4 text-brand-600" /> Alger Centre · Didouche Mourad
+              <MapPin className="h-4 w-4 shrink-0 text-brand-600" /> Alger Centre · Didouche Mourad
             </a>
             <a
               href={`tel:${site.phoneIntl}`}
-              className="flex items-center gap-2 text-ink-soft hover:text-brand-600"
+              className="flex items-center gap-2 text-ink hover:text-brand-600 sm:text-ink-soft"
             >
-              <Phone className="h-4 w-4 text-brand-600" /> {site.phoneDisplay}
+              <Phone className="h-4 w-4 shrink-0 text-brand-600" /> {site.phoneDisplay}
             </a>
           </div>
         </motion.div>
